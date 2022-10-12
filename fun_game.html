@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        funGame
+    </title>
+    <body>
+
+
+        <div style="text-align: center;">
+            <h1>This a game of number prediction and have 5 stage </h1>
+            <h2>Current Record</h2>
+        </div>
+        <div style="text-align:center;">
+            <h1 id="user" style="font-size: 40px ;"></h1>
+            <h1 id="level"></h1>
+            <h2 id="earn"></h2>
+            <button onclick="funGame()">Continue</button>
+        </div>
+        
+        
+        <script>
+            
+            let player = document.getElementById('user');
+            let lev = document.getElementById('level');
+            let gain = document.getElementById('earn');
+            let userName = prompt('please enter any Username!');
+            let stage = 1;
+            let point = 0;
+            player.innerHTML = userName
+
+            function stage1(number) {
+                
+                let _a = number[Math.floor(Math.random()*number.length)];
+                let rep = prompt('predict a number between 1 and 2');
+                
+
+                let result = (_a == rep) ? `${userName} You Win! ${point = point + 2} point :: stage ${stage} passed` :  `${userName} You lose! ${point} point:: stage ${stage} failed`;
+
+                lev.innerHTML = stage;
+                gain.innerHTML = point+" point earn";
+
+                stage++;
+                alert(result);
+    
+
+            }
+
+
+            function stage2(number) {
+                
+                let _b = number[Math.floor(Math.random()*number.length)];
+                let rep = prompt('predict a number between 1 and 3');
+                
+                let result = (_b == rep) ? `${userName} You Win! ${point = point + 2} :: stage ${stage} passed` :  `${userName} You lose! ${point} :: stage ${stage} failed`;
+
+                lev.innerHTML = 'Stage'+ stage;
+                gain.innerHTML = point+" point earn";
+
+                stage++;
+                alert(result)
+
+            }
+
+            
+            function stage3(number) {
+
+                let _b = number[Math.floor(Math.random()*number.length)];
+                let rep = prompt('predict a number between 1 and 4');
+                
+                let result = (_b == rep) ? `${userName} You Win! ${point = point + 2} :: stage ${stage} passed` :  `${userName} You lose! ${point} :: stage ${stage} failed`;
+
+                lev.innerHTML = 'Stage'+ stage;
+                gain.innerHTML = point+" point earn";
+
+                stage++;
+                alert(result)
+
+            }
+
+            function stage4(number) {
+
+                let _b = number[Math.floor(Math.random()*number.length)];
+                let rep = prompt('predict a number between 1 and 5');
+
+                let result = (_b == rep) ? `${userName} You Win! ${point = point + 2} :: stage ${stage} passed` :  `${userName} You lose! ${point} :: stage ${stage} failed`;
+
+                lev.innerHTML = 'Stage'+ stage;
+                gain.innerHTML = point+" point earn";
+
+                stage++;
+                alert(result)
+
+            }
+
+            function stage5(number) {
+
+                let _b = number[Math.floor(Math.random()*number.length)];
+                let rep = prompt('predict a number between 1 and 5');
+                
+                let result = (_b == rep) ? `${userName} You Win! ${point = point + 2} :: stage ${stage} passed` :  `${userName} You lose! ${point} :: stage ${stage} failed`;
+
+                lev.innerHTML = 'Stage'+ stage;
+                gain.innerHTML = point+" point earn";
+
+                stage++;
+                alert(result)
+
+            }
+
+            
+            function funGame() {
+
+                if(stage == 1) {
+
+                    stage1([1,2])
+
+                }else if(stage == 2) {
+
+                    stage2([1,2,3])
+
+                }else if(stage == 3) {
+
+                    stage3([1,2,3,4])
+
+                }else if(stage == 4) {
+
+                    stage3([1,2,3,5])
+
+                }else if(stage == 5) {
+
+                    stage3([1,2,3,6])
+
+                }else{
+                    
+                    lev.innerHTML = 'The End ';
+                    gain.innerHTML = point+" point earn";
+
+                }
+                
+            }
+
+            funGame()
+
+            
+        </script>
+    </body>
+</html>
